@@ -52,12 +52,7 @@ This project uses a Retrieval-Augmented Generation (RAG) approach to intelligent
 - Automated alert and error classification  
 - Integration with monitoring and ticketing tools  
 
-
-
-## **👥 Team**
-
-Built as part of ''Gen AI 4 Gen Z Hackathon 2026''
-
+---
 
 ## **📄 License**
 
