@@ -1,0 +1,132 @@
+# Technical Troubleshooting Guide
+
+A simple Python-based interactive troubleshooting system that guides users step-by-step to diagnose common technical issues.
+
+---
+
+## 📌 Project Overview
+
+This project is developed using Python.  
+It provides a structured troubleshooting system where users can select an issue and follow guided diagnostic steps.
+
+The system simulates real-world technical support workflow.
+
+---
+
+## 🛠 Requirements
+
+- Python 3.11 (64-bit) or above
+- Python added to system PATH
+
+---
+
+## 🚀 How to Run the Project
+
+### Step 1: Download the Repository
+
+Download or clone this repository to your system.
+
+### Step 2: Open Command Prompt or PowerShell
+
+Navigate to the project folder:
+
+```
+cd path_to_your_project_folder
+```
+
+### Step 3: Run the Program
+
+```
+python main.py
+```
+
+---
+
+## 💻 How the Program Works
+
+1. The program displays a list of technical issues.
+2. The user selects an issue number.
+3. The system shows step-by-step troubleshooting instructions.
+4. The user presses Enter after completing each step.
+5. The diagnosis process completes.
+6. The user can exit or choose another issue.
+
+---
+
+## 📷 Example Output
+
+```
+===== TECHNICAL TROUBLESHOOTING GUIDE =====
+1. System Not Powering On
+2. Internet Not Working
+0. Exit
+Select issue number:
+```
+
+---
+
+## 📚 Concepts Used
+
+- Python Dictionary
+- Functions
+- Loops
+- Conditional Statements
+- User Input Handling
+
+---
+
+## 🎓 Educational Purpose
+
+This project demonstrates structured problem-solving and implementation of a basic command-line troubleshooting assistant using Python.
+
+------
+
+CODE FOR VS CODE
+
+print("Program Running")
+
+issues = {
+    "1": {
+        "name": "System Not Powering On",
+        "steps": [
+            "Check power cable connection.",
+            "Check power socket.",
+            "Turn ON SMPS switch.",
+            "Check motherboard LED."
+        ]
+    },
+    "2": {
+        "name": "Internet Not Working",
+        "steps": [
+            "Check router power.",
+            "Restart router.",
+            "Check LAN cable.",
+            "Run network diagnostics."
+        ]
+    }
+}
+
+def show_menu():
+    print("\n===== TECHNICAL TROUBLESHOOTING GUIDE =====")
+    for key in issues:
+        print(f"{key}. {issues[key]['name']}")
+    print("0. Exit")
+
+def troubleshoot(choice):
+    if choice in issues:
+        print(f"\nTroubleshooting: {issues[choice]['name']}")
+        for step_no, step in enumerate(issues[choice]['steps'], 1):
+            input(f"\nStep {step_no}: {step}\nPress Enter after completing...")
+        print("\nIssue Diagnosis Completed.")
+    else:
+        print("Invalid Option.")
+
+while True:
+    show_menu()
+    choice = input("Select issue number: ")
+    
+    if choice == "0":
+        print("Exiting...")
+        break
+    
+    troubleshoot(choice)
